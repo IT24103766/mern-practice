@@ -11,6 +11,11 @@ const goalSchema = mongoose.Schema(
       type: String,
       required: [true, 'Please add a text value'],
     },
+    priority: {
+      type: String,
+      enum: ['low', 'medium', 'high'],
+      default: 'medium',
+    },
   },
   {
     timestamps: true,
