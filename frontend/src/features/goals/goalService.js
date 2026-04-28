@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = '/api/goals/'
+const API_URL = 'https://mern-practice-it241037662692-5p74l2q9.leapcell.dev/api/goals/'
 
 // Create new goal
 const createGoal = async (goalData, token) => {
