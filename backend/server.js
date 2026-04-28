@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const colors = require('colors');
+const cors = require('cors');
 require('dotenv').config({ path: './backend/.env' });
 const { errorHandler } = require('./middleware/errorMiddleware');
 const connectDB = require('./config/db');
@@ -10,16 +11,17 @@ connectDB();
 
 const app = express();
 
+app.use(cors({
+  origin: 'https://sage-macaron-edd5cc.netlify.app'
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/goals', require('./routes/goalRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
 
-// Serve frontend
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../frontend/build')));
-
   app.get('*', (req, res) =>
     res.sendFile(
       path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')
