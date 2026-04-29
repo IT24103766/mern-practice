@@ -4,7 +4,7 @@ import { createGoal } from '../features/goals/goalSlice'
 
 function GoalForm() {
   const [text, setText] = useState('')
-  const [priority, setPriority] = useState('medium')
+  const [priority, setPriority] = useState('Medium')
 
   const dispatch = useDispatch()
 
@@ -13,7 +13,7 @@ function GoalForm() {
 
     dispatch(createGoal({ text, priority }))
     setText('')
-    setPriority('medium')
+    setPriority('Medium')
   }
 
   return (
@@ -37,9 +37,9 @@ function GoalForm() {
             value={priority}
             onChange={(e) => setPriority(e.target.value)}
           >
-            <option value='low'>Low</option>
-            <option value='medium'>Medium</option>
-            <option value='high'>High</option>
+            <option value='Low'>Low</option>
+            <option value='Medium'>Medium</option>
+            <option value='High'>High</option>
           </select>
         </div>
         <div className='form-group'>

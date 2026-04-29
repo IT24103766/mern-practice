@@ -108,32 +108,6 @@ h3 {
   background: none;
 }
 
-/* Priority Styles */
-.priority-badge {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.priority-high {
-  background-color: #ffebee;
-  color: #c62828;
-}
-
-.priority-medium {
-  background-color: #fff3e0;
-  color: #ef6c00;
-}
-
-.priority-low {
-  background-color: #e8f5e9;
-  color: #2e7d32;
-}
-
 .form,
 .content {
   width: 70%;
